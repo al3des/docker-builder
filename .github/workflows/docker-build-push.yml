@@ -50,6 +50,8 @@ jobs:
 
       # -------------------------
       # Build & Push
+      # ${{ inputs.gitea_registry }}/${{ inputs.image_name }}:${{ inputs.release_tag }}
+      # ${{ inputs.gitea_registry }}/${{ inputs.image_name }}:latest
       # -------------------------
       - name: Build and Push Image
         uses: docker/build-push-action@v6
@@ -60,5 +62,3 @@ jobs:
             ghcr.io/${{ github.repository }}:${{ inputs.release_tag }}
             ghcr.io/${{ github.repository }}:latest
 
-# ${{ inputs.gitea_registry }}/${{ inputs.image_name }}:${{ inputs.release_tag }}
-# ${{ inputs.gitea_registry }}/${{ inputs.image_name }}:latest
